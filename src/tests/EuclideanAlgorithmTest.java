@@ -1,21 +1,27 @@
 package tests;
-import Algorithms.EuclideanAlgorithm;
+
+import algorithms.EuclideanAlgorithm;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
-import static org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.jupiter.api.Assertions.*;
+import static constants.Constants.*;
+
+/**
+ * Test class for automated testing of the EuclideanAlgorithm class
+ */
 public class EuclideanAlgorithmTest {
 
     @Test
     void test0_0() {
-        BigInteger a = BigInteger.ZERO, b = BigInteger.ZERO, expected = BigInteger.ZERO;
+        BigInteger a = ZERO, b = ZERO, expected = ZERO;
         testGCD(a, b, expected);
     }
 
     @Test
     void test1_0() {
-        BigInteger a = BigInteger.ONE, b = BigInteger.ZERO, expected = BigInteger.ONE;
+        BigInteger a = ONE, b = ZERO, expected = ONE;
         testGCD(a, b, expected);
     }
 
@@ -27,13 +33,13 @@ public class EuclideanAlgorithmTest {
 
     @Test
     void test1_1() {
-        BigInteger a = new BigInteger("1"), b = new BigInteger("1"), expected = new BigInteger("1");
+        BigInteger a = ONE, b = ONE, expected = ONE;
         testGCD(a, b, expected);
     }
 
     @Test
     void test121_23() {
-        BigInteger a = new BigInteger("123"), b = new BigInteger("23"), expected = new BigInteger("1");
+        BigInteger a = new BigInteger("123"), b = new BigInteger("23"), expected = ONE;
         testGCD(a, b, expected);
     }
 
@@ -63,14 +69,15 @@ public class EuclideanAlgorithmTest {
 
     @Test
     void testBigNumber2() {
-        BigInteger a = new BigInteger("3744843080529615909019181510330554205500926021947"), b = BigInteger.ONE, expected = BigInteger.ONE;
+        BigInteger a = new BigInteger("3744843080529615909019181510330554205500926021947"), b = ONE, expected = ONE;
         testGCD(a, b, expected);
     }
 
     /**
-     * Utility function for testing EuclideanAlgorithm.gcd()
-     * @param a the first integer
-     * @param b the second integer
+     * Utility function for testing EuclideanAlgorithm.gcd() against expected outputs
+     *
+     * @param a        the first integer
+     * @param b        the second integer
      * @param expected the expected result of gcd(a, b)
      */
     private void testGCD(BigInteger a, BigInteger b, BigInteger expected) {
