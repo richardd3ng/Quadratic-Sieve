@@ -1,6 +1,7 @@
 package main;
 
 import algorithms.EuclideanAlgorithm;
+import algorithms.QuadraticSieve;
 
 import java.math.BigInteger;
 
@@ -10,8 +11,7 @@ import java.math.BigInteger;
 public class Main {
 
     public static void main(String[] args) {
-        String int1 = "1731", int2 = "999";
-        BigInteger a = new BigInteger(int1), b = new BigInteger(int2);
-        System.out.println(EuclideanAlgorithm.gcd(a, b));
+        BigInteger n = new BigInteger("539873");
+        QuadraticSieve.factorize(n);
     }
 }
