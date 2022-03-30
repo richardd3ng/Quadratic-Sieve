@@ -30,7 +30,7 @@ public class EuclideanAlgorithm {
         while (true) {  // main loop of Euclidean Algorithm
             BigInteger q = a.divide(b);
             BigInteger r = a.subtract(q.multiply(b));
-            if (DEBUG) {
+            if (DEBUG_EUCLIDEAN_ALGORITHM) {
                 System.out.printf("%s = %s(%s) + %s\n", a, q, b, r); // show steps
             }
             if (r.equals(ZERO)) { // guaranteed to escape loop when remainder is zero

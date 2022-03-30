@@ -10,7 +10,7 @@ import java.math.BigInteger;
 public class Main {
 
     public static void main(String[] args) {
-        String int1 = "27", int2 = "900";
+        String int1 = "1731", int2 = "999";
         BigInteger a = new BigInteger(int1), b = new BigInteger(int2);
         System.out.println(EuclideanAlgorithm.gcd(a, b));
     }
