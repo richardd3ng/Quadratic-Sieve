@@ -1,6 +1,5 @@
 package main;
 
-import algorithms.EuclideanAlgorithm;
 import algorithms.QuadraticSieve;
 
 import java.math.BigInteger;

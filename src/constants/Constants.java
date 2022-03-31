@@ -12,4 +12,7 @@ public class Constants {
     public static final BigInteger ZERO = BigInteger.ZERO;
     public static final BigInteger ONE = BigInteger.ONE;
 
+    // Quadratic Sieve constants
+    public static final int SIEVING_INTERVAL_B_FACTOR = 1; // sets sieving interval of size 2*factor*B
+
 }

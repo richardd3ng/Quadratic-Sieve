@@ -1,6 +1,6 @@
-package tests;
+package tests.math_util;
 
-import algorithms.EuclideanAlgorithm;
+import algorithms.MathUtil;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
@@ -11,7 +11,7 @@ import static constants.Constants.*;
 /**
  * Test class for automated testing of the EuclideanAlgorithm class
  */
-public class EuclideanAlgorithmTest {
+public class GCDTest {
 
     @Test
     void test0_0() {
@@ -74,13 +74,13 @@ public class EuclideanAlgorithmTest {
     }
 
     /**
-     * Utility function for testing EuclideanAlgorithm.gcd() against expected outputs
+     * Utility function for testing MathUtil.gcd() against expected outputs
      *
      * @param a        the first integer
      * @param b        the second integer
      * @param expected the expected result of gcd(a, b)
      */
     private void testGCD(BigInteger a, BigInteger b, BigInteger expected) {
-        assertEquals(expected, EuclideanAlgorithm.gcd(a, b));
+        assertEquals(expected, MathUtil.gcd(a, b));
     }
 }

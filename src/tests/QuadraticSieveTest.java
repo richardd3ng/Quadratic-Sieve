@@ -19,6 +19,39 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
+    // this shit currently takes forever cuz factor base is too small, but it would theoretically work
+    @Test
+    void test_16921456439215439701() {
+        BigInteger n = new BigInteger("16921456439215439701");
+        BigInteger factor1 = new BigInteger("2860486313");
+        BigInteger factor2 = new BigInteger("5915587277");
+        testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
+    }
+
+    @Test
+    void test_46839566299936919234246726809() {
+        BigInteger n = new BigInteger("46839566299936919234246726809");
+        BigInteger factor1 = new BigInteger("100000000105583");
+        BigInteger factor2 = new BigInteger("468395662504823");
+        testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
+    }
+
+    @Test
+    void test_6172835808641975203638304919691358469663() {
+        BigInteger n = new BigInteger("6172835808641975203638304919691358469663");
+        BigInteger factor1 = new BigInteger("11111111111111111011");
+        BigInteger factor2 = new BigInteger("555555222777777773333");
+        testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
+    }
+
+    @Test
+    void test_3744843080529615909019181510330554205500926021947() {
+        BigInteger n = new BigInteger("3744843080529615909019181510330554205500926021947");
+        BigInteger factor1 = new BigInteger("1123456667890987666543211");
+        BigInteger factor2 = new BigInteger("3333322225555555777777777");
+        testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
+    }
+    
     /**
      * Utility function for testing QuadraticSieve.factorize() against expected outputs
      *
