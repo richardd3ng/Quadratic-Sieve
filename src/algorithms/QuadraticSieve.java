@@ -2,6 +2,7 @@ package algorithms;
 
 import java.math.BigInteger;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static constants.Constants.*;
@@ -10,8 +11,8 @@ public class QuadraticSieve {
 
     public static BigInteger[] factorize(BigInteger n) {
         int B = MathUtil.getBound(n);
-        Set<Integer> factorBase = MathUtil.getFactorBase(B);
-        BigInteger factorBaseProduct = MathUtil.computeSetProduct(factorBase);
+        List<Integer> factorBase = MathUtil.getFactorBase(B);
+        BigInteger factorBaseProduct = MathUtil.computeListProduct(factorBase);
         int t = factorBase.size();
 
         Set<BigInteger> BSmoothNumbers = new HashSet<>();
