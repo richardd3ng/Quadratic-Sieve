@@ -1,5 +1,6 @@
 package main;
 
+import algorithms.MathUtil;
 import algorithms.QuadraticSieve;
 
 import java.math.BigInteger;
@@ -11,6 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         BigInteger n = new BigInteger("539873");
-        QuadraticSieve.factorize(n);
+        //QuadraticSieve.factorize(n);
+        System.out.println("bound: " + MathUtil.getBound(n));
     }
 }
