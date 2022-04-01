@@ -19,7 +19,7 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
-    // this shit currently takes forever cuz factor base is too small, but it would theoretically work
+    // the bottom 4 numbers are the examples from the document
     @Test
     void test_16921456439215439701() {
         BigInteger n = new BigInteger("16921456439215439701");
@@ -36,6 +36,8 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
+    // the last 2 currently take forever cuz factor base is too small
+
     @Test
     void test_6172835808641975203638304919691358469663() {
         BigInteger n = new BigInteger("6172835808641975203638304919691358469663");
@@ -51,7 +53,7 @@ public class QuadraticSieveTest {
         BigInteger factor2 = new BigInteger("3333322225555555777777777");
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
-    
+
     /**
      * Utility function for testing QuadraticSieve.factorize() against expected outputs
      *

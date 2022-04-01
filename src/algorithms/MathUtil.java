@@ -65,20 +65,6 @@ public class MathUtil {
     }
 
     /**
-     *
-     * @param n
-     * @param bound
-     * @param multipleN
-     * @return
-     */
-    public static BigInteger[] getSievingInterval(BigInteger n, int bound, int multipleN) {
-        // TODO: is this the best choice?
-        BigInteger B = new BigInteger(String.valueOf(bound));
-        BigInteger sqrtN = n.sqrt(); // computes floor(sqrt(n))
-        return new BigInteger[]{sqrtN.subtract(B), sqrtN.add(B)};
-    }
-
-    /**
      * Determines whether a number is B-smooth
      * https://math.stackexchange.com/questions/182398/smooth-numbers-algorithm
      *

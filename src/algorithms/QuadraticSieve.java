@@ -27,6 +27,7 @@ public class QuadraticSieve {
                     break;
                 }
                 BigInteger candidate = start.add(new BigInteger(String.valueOf(idx)));
+                System.out.println("scale: " + scale);
                 System.out.println("candidate: " + candidate);
                 System.out.println("found: " + BSmoothNumbers.size());
                 if (MathUtil.isBSmooth(candidate.pow(2), factorBaseProduct)) {
@@ -38,7 +39,7 @@ public class QuadraticSieve {
         }
 
 
-        BigInteger[] linearCombo = MathUtil.getLinearCombo(new HashSet<>());
+        BigInteger[] linearCombo = MathUtil.getLinearCombo(BSmoothNumbers);
         BigInteger x = linearCombo[0].multiply(linearCombo[1]).mod(n);
         BigInteger y = new BigInteger("5984");
 
