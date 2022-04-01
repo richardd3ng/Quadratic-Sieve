@@ -1,6 +1,7 @@
 package algorithms;
 
 import java.math.BigInteger;
+import java.util.math;
 import java.util.Set;
 
 import static constants.Constants.*;
@@ -44,11 +45,22 @@ public class MathUtil {
         }
     }
 
-    public static int getBound(BigInteger num) {
+    public static BigInteger getBound(BigInteger num) {
         // TODO: complete this method
-        return 19;
-    }
+        BigInteger x = num.sqrt().multiply(num.sqrt().sqrt().sqrt());
+        BigDecimal temp1 =  new BigDecimal(5.5129);
+        BigDecimal B = new BigDecimal();
+        B = temp1.multiply(this.BigLog(x).multiply(this.BigLog(this.BigLog(x))).sqrt());
 
+        return B;
+    }
+    public static BigDecimal BigLog(BigInteger num){
+        BigInteger temp = num.bitCount();
+        BigDecimal log = new BigDecimal(temp);
+        log = log.divide(3.32192809489);
+        return log;
+
+    }
     public static Set<Integer> getFactorBase(int bound) {
         // TODO: complete this method
         //return Set.of(2, 3, 5, 7, 11, 13, 17);
