@@ -52,7 +52,7 @@ public class MathUtil {
 //        B = temp1.multiply(this.BigLog(x).multiply(this.BigLog(this.BigLog(x))).sqrt());
 //
 //        return B;
-        return 15149;
+        return 5000;
     }
 //    public static BigDecimal BigLog(BigInteger num){
 //        BigInteger temp = num.bitCount();

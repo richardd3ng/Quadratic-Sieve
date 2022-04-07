@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class QuadraticSieveTest {
 
+    // <1 sec
     @Test
     void test_539874() {
         BigInteger n = new BigInteger("539873");
@@ -19,7 +20,17 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
+    // ~3 min
+    @Test
+    void test_521900076822691495534066493() {
+        BigInteger n = new BigInteger("521900076822691495534066493");
+        BigInteger factor1 = new BigInteger("15098125637513"), factor2 = new BigInteger("34567209821461");
+        testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
+    }
+
     // the bottom 4 numbers are the examples from the document
+
+    // ~15 sec
     @Test
     void test_16921456439215439701() {
         BigInteger n = new BigInteger("16921456439215439701");
@@ -28,6 +39,7 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
+    // ~4.5 min
     @Test
     void test_46839566299936919234246726809() {
         BigInteger n = new BigInteger("46839566299936919234246726809");
@@ -36,8 +48,9 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
-    // the last 2 currently take forever cuz factor base is too small
+    // the last 2 currently take forever but should work given time
 
+    // probably ~5 hours
     @Test
     void test_6172835808641975203638304919691358469663() {
         BigInteger n = new BigInteger("6172835808641975203638304919691358469663");

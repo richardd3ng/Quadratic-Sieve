@@ -8,7 +8,7 @@ import static constants.Constants.*;
 public class Gaussian {
 
     //private variables of the Gaussian class
-    boolean[][] matrix;
+    private boolean[][] matrix;
     private int numBsmooth;
     private int numFactors;
     private boolean[] marked;
@@ -20,8 +20,8 @@ public class Gaussian {
     public Gaussian(List<BigInteger> BSmoothNumbers, List<Integer> factorBase, BigInteger n) {
         //set private variables
         this.n = n;
-        numBsmooth = BSmoothNumbers.size();
-        numFactors = factorBase.size();
+        this.numBsmooth = BSmoothNumbers.size();
+        this.numFactors = factorBase.size();
         this.matrix = new boolean[numBsmooth][numFactors];
         this.factorBase = factorBase;
         this.BSmoothNumbers = BSmoothNumbers;
@@ -79,17 +79,17 @@ public class Gaussian {
                     }
                     matrix[row][col] = parity;
                 }
-                col += 1;
+                col++;
             }
-            row += 1;
+            row++;
         }
     }
 
     /**
      * This function adds the column j to the column k in the GF(2) matrix
      *
-     * @param j
-     * @param k
+     * @param j column j
+     * @param k column k
      */
     private void addCol(int j, int k) {
         for (int row = 0; row < numBsmooth; row++) {
@@ -151,13 +151,12 @@ public class Gaussian {
                 }
             }
         }
-        return null;
+        return new BigInteger[]{};
     }
 
     /**
-     * prints matrix and marked vector for decoding
+     * prints matrix and marked vector for debugging
      */
-
     void printResult() {
         System.out.println("MARKED");
         for (int i = 0; i < numBsmooth; i++) {
