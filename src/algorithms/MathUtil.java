@@ -52,7 +52,7 @@ public class MathUtil {
 //        B = temp1.multiply(this.BigLog(x).multiply(this.BigLog(this.BigLog(x))).sqrt());
 //
 //        return B;
-        return 19;
+        return 15149;
     }
 //    public static BigDecimal BigLog(BigInteger num){
 //        BigInteger temp = num.bitCount();
@@ -126,9 +126,5 @@ public class MathUtil {
         return false;
     }
 
-    public static BigInteger[] getLinearCombo(Set<BigInteger> BSmoothNumbers) {
-        // TODO: complete this method
-        return new BigInteger[]{new BigInteger("735"), new BigInteger("801")};
-    }
 
 }
