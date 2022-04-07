@@ -14,5 +14,4 @@ public class Constants {
 
     // Quadratic Sieve constants
     public static final int SIEVING_INTERVAL_B_FACTOR = 1; // sets sieving interval of size 2*factor*B
-
 }

@@ -62,7 +62,8 @@ public class QuadraticSieveTest {
      */
     private void testQuadraticSieve(BigInteger n, BigInteger[] expected) {
         BigInteger[] result = QuadraticSieve.factorize(n);
-        assertTrue((result[0].compareTo(expected[0]) == 0 && result[1].compareTo(expected[1]) == 0) ||(result[1].compareTo(expected[0]) == 0 && result[0].compareTo(expected[1]) == 0) );
+        assertTrue((result[0].compareTo(expected[0]) == 0 && result[1].compareTo(expected[1]) == 0)
+                || (result[1].compareTo(expected[0]) == 0 && result[0].compareTo(expected[1]) == 0));
     }
 }
 

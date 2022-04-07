@@ -2,9 +2,7 @@ package algorithms;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static constants.Constants.*;
 
@@ -16,7 +14,6 @@ public class QuadraticSieve {
         BigInteger factorBaseProduct = MathUtil.computeListProduct(factorBase);
         int t = factorBase.size();
 
-        //Set<BigInteger> BSmoothNumbers = new HashSet<>();
         List<BigInteger> BSmoothNumbers = new ArrayList<>();
         // construct a sieving interval of length 2B around floor(n), think about this more
         // look for numbers in sieving interval of length 2*factor*B around sqrt(n), sqrt(2n), sqrt(3n), etc.
@@ -33,33 +30,29 @@ public class QuadraticSieve {
                     break;
                 }
                 BigInteger candidate = start.add(new BigInteger(String.valueOf(idx)));
-                /*System.out.println("scale: " + scale);
+                System.out.println("scale: " + scale);
                 System.out.println("candidate: " + candidate);
-                System.out.println("found: " + BSmoothNumbers.size());*/
+                System.out.println("found: " + BSmoothNumbers.size());
 
                 BigInteger modulo = candidate.pow(2).mod(n);
-                if (modulo.compareTo(n.divide(BigInteger.valueOf(2))) == 1) {
+                if (modulo.compareTo(n.divide(BigInteger.valueOf(2))) > 0) {
                     modulo = n.subtract(modulo);
                 }
 
                 if (MathUtil.isBSmooth(modulo.abs(), factorBaseProduct)) {
-
                     BSmoothNumbers.add(candidate);
-                    System.out.println("CANDIDATE FOUND");
-                    System.out.print(BSmoothNumbers.size());
-                    System.out.println(" b smooth numbers found");
-                    System.out.print(requiredSize);
-                    System.out.println(" b smooth numbers needed");
+//                    System.out.println("CANDIDATE FOUND");
+//                    System.out.print(BSmoothNumbers.size());
+//                    System.out.println(" b smooth numbers found");
+//                    System.out.print(requiredSize);
+//                    System.out.println(" b smooth numbers needed");
                 }
-
                 idx++;
             }
             scale++;
         }
 
         Gaussian result = new Gaussian(BSmoothNumbers, factorBase, n);
-        BigInteger[] solutions = result.findSolutions();
-        return solutions;
-
+        return result.findSolutions();
     }
 }
