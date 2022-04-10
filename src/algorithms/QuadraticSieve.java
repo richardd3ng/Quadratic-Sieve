@@ -59,4 +59,6 @@ public class QuadraticSieve {
         }
         return new BigInteger[]{factor1, factor2};
     }
+
+  
 }
