@@ -3,7 +3,6 @@ package algorithms;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.MathContext;
-import java.math.RoundingMode;
 import java.util.*;
 
 import static constants.Constants.*;
@@ -47,21 +46,23 @@ public class MathUtil {
         }
     }
 
-    public static int getBound(BigInteger num) {
-//        BigInteger x = num.sqrt().multiply(num.sqrt().sqrt().sqrt());
-//        BigDecimal exp =  new BigDecimal("0.707");
-//        int ret = exp.multiply(BigLog(x).multiply(BigLog(BigLog(x).toBigInteger())).sqrt(new MathContext(10))).pow(3).toBigInteger().intValueExact();
-//        System.out.println("bound: " + ret);
-//        return ret;
-        return 3559;
-    }
-
+    // Takes the log base 10 of a Big Decimal
     public static BigDecimal BigLog(BigInteger num) {
-        int temp = num.bitCount();
+        int bits = num.bitLength();
+        BigInteger temp = new BigInteger(String.valueOf(bits));
         BigDecimal log = new BigDecimal(temp);
-        log = log.divide(new BigDecimal("3.32192809489"), RoundingMode.HALF_UP);
+        BigDecimal temp2 = new BigDecimal(3.32192809489);
+        log = log.divide(temp2, BigDecimal.ROUND_HALF_UP);
         return log;
     }
+
+    // Formula for bound B
+    public static int getBound(BigInteger num) {
+        BigDecimal exp = new BigDecimal("1.707");
+        MathContext mc = new MathContext(100);
+        return exp.multiply(BigLog(num).multiply(BigLog(BigLog(num).toBigInteger())).sqrt(mc)).pow(3).toBigInteger().intValueExact();
+    }
+
 
     /**
      * Generates the list of primes less than or equal to a bound using the Sieve of Eratosthenes

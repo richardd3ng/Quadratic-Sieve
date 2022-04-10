@@ -55,9 +55,6 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
-    // the last 2 currently take forever but should work given time
-
-    // probably ~5 hours
     @Test
     void test_6172835808641975203638304919691358469663() {
         BigInteger n = new BigInteger("6172835808641975203638304919691358469663");
@@ -66,7 +63,6 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
-    // no clue, probably days
     @Test
     void test_3744843080529615909019181510330554205500926021947() {
         BigInteger n = new BigInteger("3744843080529615909019181510330554205500926021947");
