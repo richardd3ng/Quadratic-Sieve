@@ -44,14 +44,13 @@ public class MathUtil {
             b = r;
         }
     }
-
+    //Formula for bound B
     public static BigInteger getBound(BigInteger num) {
-        // TODO: complete this method
         BigInteger x = num.sqrt().multiply(num.sqrt().sqrt().sqrt());
-        BigDecimal exp =  new BigDecimal("5.5129");
-        return exp.multiply(BigLog(x).multiply(BigLog(BigLog(x).toBigInteger())).sqrt()).toBigInteger();
+        BigDecimal exp =  new BigDecimal(".707");
+        return exp.multiply(BigLog(x).multiply(BigLog(BigLog(x).toBigInteger())).sqrt()).pow(3).toBigInteger();
     }
-
+    //Takes the log base 10 of a Big Decimal 
     public static BigDecimal BigLog(BigInteger num){
         BigInteger temp = num.bitCount();
         BigDecimal log = new BigDecimal(temp);
