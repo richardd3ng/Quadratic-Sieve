@@ -20,7 +20,6 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
-    // ~3 min
     @Test
     void test_521900076822691495534066493() {
         BigInteger n = new BigInteger("521900076822691495534066493");
@@ -28,9 +27,17 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
+    // ~4 min?
+    @Test
+    void test_194920496263521028482429080527() {
+        BigInteger n = new BigInteger("194920496263521028482429080527");
+        BigInteger factor1 = new BigInteger("289673451203483"), factor2 = new BigInteger("672897345109469");
+        testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
+    }
+
     // the bottom 4 numbers are the examples from the document
 
-    // ~15 sec
+    // ~2 sec
     @Test
     void test_16921456439215439701() {
         BigInteger n = new BigInteger("16921456439215439701");
@@ -59,6 +66,7 @@ public class QuadraticSieveTest {
         testQuadraticSieve(n, new BigInteger[]{factor1, factor2});
     }
 
+    // no clue, probably days
     @Test
     void test_3744843080529615909019181510330554205500926021947() {
         BigInteger n = new BigInteger("3744843080529615909019181510330554205500926021947");

@@ -14,7 +14,7 @@ public class QuadraticSieve {
         BigInteger factorBaseProduct = MathUtil.computeListProduct(factorBase);
 
         List<BigInteger> BSmoothNumbers = new ArrayList<>();
-        // construct a sieving interval of length 2B around floor(n), think about this more
+        // construct a sieving interval of length 2B around floor(n)
         // look for numbers in sieving interval of length 2*factor*B around sqrt(n), sqrt(2n), sqrt(3n), etc.
         int scale = 1; // sieving interval centered around sqrt(scale * n)
         int requiredSize = 2 * factorBase.size() + 1;
@@ -28,9 +28,6 @@ public class QuadraticSieve {
                     break;
                 }
                 BigInteger candidate = start.add(new BigInteger(String.valueOf(idx)));
-//                System.out.println("scale: " + scale);
-//                System.out.println("candidate: " + candidate);
-//                System.out.println("found: " + BSmoothNumbers.size());
 
                 BigInteger modulo = candidate.pow(2).mod(n);
                 if (modulo.compareTo(n.divide(BigInteger.valueOf(2))) > 0) {
@@ -39,7 +36,7 @@ public class QuadraticSieve {
 
                 if (MathUtil.isBSmooth(modulo.abs(), factorBaseProduct)) {
                     BSmoothNumbers.add(candidate);
-                    System.out.println(String.format("%s/%s FOUND", BSmoothNumbers.size(), requiredSize));
+                    System.out.printf("%s/%s FOUND%n", BSmoothNumbers.size(), requiredSize);
                 }
                 idx++;
             }
