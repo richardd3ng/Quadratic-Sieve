@@ -49,4 +49,6 @@ public class QuadraticSieve {
         Gaussian result = new Gaussian(BSmoothNumbers, factorBase, n);
         return result.findSolutions();
     }
+
+  
 }

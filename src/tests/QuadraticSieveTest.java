@@ -78,5 +78,6 @@ public class QuadraticSieveTest {
         assertTrue((result[0].compareTo(expected[0]) == 0 && result[1].compareTo(expected[1]) == 0)
                 || (result[1].compareTo(expected[0]) == 0 && result[0].compareTo(expected[1]) == 0));
     }
+    
 }
 
