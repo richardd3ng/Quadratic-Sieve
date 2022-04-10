@@ -44,19 +44,26 @@ public class MathUtil {
             b = r;
         }
     }
-    //Formula for bound B
-    public static BigInteger getBound(BigInteger num) {
-        BigInteger x = num.sqrt().multiply(num.sqrt().sqrt().sqrt());
-        BigDecimal exp =  new BigDecimal(".707");
-        return exp.multiply(BigLog(x).multiply(BigLog(BigLog(x).toBigInteger())).sqrt()).pow(3).toBigInteger();
-    }
+   
     //Takes the log base 10 of a Big Decimal 
     public static BigDecimal BigLog(BigInteger num){
-        BigInteger temp = num.bitCount();
-        BigDecimal log = new BigDecimal(temp);
-        log = log.divide(3.32192809489);
-        return log;
-    }
+			int bits = num.bitLength();
+			BigInteger temp = new BigInteger(bits+"");
+			//System.out.println(bits);
+			BigDecimal log = new BigDecimal(temp);
+			BigDecimal temp2 = new BigDecimal(3.32192809489);
+			log = log.divide(temp2,log.ROUND_HALF_UP);
+			return log;
+		}
+	//Formula for bound B
+	public static BigInteger getBound(BigInteger num) {
+			//BigInteger x = num.sqrt().multiply(num.sqrt().sqrt().sqrt());
+			BigDecimal exp =  new BigDecimal("1.707");
+			MathContext mc = new MathContext(100);
+			System.out.println(BigLog(num));
+			System.out.println(BigLog(BigLog(num).toBigInteger()));
+			return exp.multiply(BigLog(num).multiply(BigLog(BigLog(num).toBigInteger())).sqrt(mc)).pow(3).toBigInteger();
+		}
 
 
     public static Set<Integer> getFactorBase(int bound) {
