@@ -58,6 +58,7 @@ public class MathUtil {
         return log;
     }
 
+
     public static Set<Integer> getFactorBase(int bound) {
         // TODO: complete this method
         //return Set.of(2, 3, 5, 7, 11, 13, 17);
