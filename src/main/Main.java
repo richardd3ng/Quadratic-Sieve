@@ -11,8 +11,9 @@ import java.math.BigInteger;
 public class Main {
 
     public static void main(String[] args) {
-        BigInteger n = new BigInteger("539873");
-        //QuadraticSieve.factorize(n);
-        System.out.println(MathUtil.getFactorBase(17));
+        BigInteger n = new BigInteger("521900076822691495534066493");
+        BigInteger[] results = QuadraticSieve.factorize(n);
+        System.out.println(results[0]);
+        System.out.println(results[1]);
     }
 }

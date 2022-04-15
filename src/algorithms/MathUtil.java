@@ -35,9 +35,9 @@ public class MathUtil {
         while (true) {  // main loop of Euclidean Algorithm
             BigInteger q = a.divide(b);
             BigInteger r = a.subtract(q.multiply(b));
-            if (DEBUG_EUCLIDEAN_ALGORITHM) {
-                System.out.printf("%s = %s(%s) + %s\n", a, q, b, r); // show steps
-            }
+//            if (DEBUG_EUCLIDEAN_ALGORITHM) {
+//                System.out.printf("%s = %s(%s) + %s\n", a, q, b, r); // show steps
+//            }
             if (r.equals(ZERO)) { // guaranteed to escape loop when remainder is zero
                 return b;
             }
@@ -62,7 +62,6 @@ public class MathUtil {
         MathContext mc = new MathContext(100);
         return exp.multiply(BigLog(num).multiply(BigLog(BigLog(num).toBigInteger())).sqrt(mc)).pow(3).toBigInteger().intValueExact();
     }
-
 
     /**
      * Generates the list of primes less than or equal to a bound using the Sieve of Eratosthenes

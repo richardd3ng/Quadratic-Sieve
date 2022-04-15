@@ -36,7 +36,7 @@ public class QuadraticSieve {
 
                 if (MathUtil.isBSmooth(modulo.abs(), factorBaseProduct)) {
                     BSmoothNumbers.add(candidate);
-                    System.out.printf("%s/%s FOUND%n", BSmoothNumbers.size(), requiredSize);
+                    //System.out.printf("%s/%s FOUND%n", BSmoothNumbers.size(), requiredSize);
                 }
                 idx++;
             }
@@ -46,6 +46,4 @@ public class QuadraticSieve {
         Gaussian result = new Gaussian(BSmoothNumbers, factorBase, n);
         return result.findSolutions();
     }
-
-  
 }
