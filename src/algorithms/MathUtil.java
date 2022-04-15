@@ -71,24 +71,22 @@ public class MathUtil {
      * @return the primes less than or equal to bound
      */
     public static List<Integer> getFactorBase(int bound) {
-        boolean[] remaining = new boolean[bound + 1];
-        Arrays.fill(remaining, true);
-        for (int i = 2; i * i < bound; i++) {
-            if (remaining[i]) {
-                for (int j = i * i; j <= bound; j += i) {
-                    remaining[j] = false;
+        boolean[] isComposite = new boolean[bound + 1];
+        for (int p = 2; p * p < bound; p++) {
+            if (!isComposite[p]) {
+                for (int i = p * p; i <= bound; i += p) {
+                    isComposite[i] = true;
                 }
             }
         }
         List<Integer> factorBase = new ArrayList<>();
         for (int i = 2; i <= bound; i++) {
-            if (remaining[i]) {
+            if (!isComposite[i]) {
                 factorBase.add(i);
             }
         }
         return factorBase;
     }
-
 
     public static BigInteger computeListProduct(List<Integer> list) {
         BigInteger product = BigInteger.ONE;
